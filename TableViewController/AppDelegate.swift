@@ -15,7 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //Crear window
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        //Cambia color al navigation bar
+        UINavigationBar.appearance().barTintColor = UIColor.orange
+        //Cambia de color a la letra del navigation bar
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        //Cambia el color al status bar
+        application.statusBarStyle = .lightContent
+        
+        let controller = QuestionViewController()
+        let navController = UINavigationController(rootViewController: controller)
+        
+        
+        
+        window?.rootViewController = navController
+        
         return true
     }
 
